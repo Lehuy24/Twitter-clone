@@ -1,9 +1,10 @@
 import express from 'express'
-
+import databaseService from './services/database.service'
 import usersrouter from './routes/users.routes'
 const app = express()
 const port = 3000
 app.use(express.json()) // process json from postman
+databaseService.connect()
 app.get('/', (req, res) => {
   res.send('hello world')
 })
